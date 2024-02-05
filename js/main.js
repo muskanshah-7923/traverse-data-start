@@ -1,20 +1,9 @@
-// TRAVERSE DATA CYU ASSIGNMENT START CODE
+// ANALYZER DATA START CODE
 
 // Load Data From Files
-let surveyData;
-fetch("data/survey-results.txt")
-  .then((rawData) => rawData.text())
-  .then((strData) => (surveyData = strData.split(/\r?\n/)));
-
-let ageData;
-fetch("data/age-data.txt")
-  .then((rawData) => rawData.text())
-  .then((strData) => (ageData = strData.split(/\r?\n/)));
-
-let numberData;
-fetch("data/number-data.txt")
-  .then((rawData) => rawData.text())
-  .then((strData) => (numberData = strData.split(/\r?\n/)));
+let surveyData = await loadTextFile("data/survey-results.txt");
+let ageData = await loadTextFile("data/age-data.txt");
+let numberData = await loadTextFile("data/number-data.txt");
 
 // Output Element Variable
 let outputEl = document.getElementById("output");
