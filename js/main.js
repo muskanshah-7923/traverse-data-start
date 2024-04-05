@@ -29,9 +29,9 @@ function btnClicked() {
 // Menu Option Functions
 
 function traverseSurveyData() {
-  let yes = 0;
-  let no = 0;
-  let maybe = 0;
+  let yes = [];
+  let no = [];
+  let maybe = [];
 
   for (let i = 0; i < surveyData.length; i++) {
     if (surveyData[i] === "Yes") {
@@ -42,7 +42,7 @@ function traverseSurveyData() {
       maybe++;
     }
   }
-  outputEl.innerHTML = `Survey Data: 
+  outputEl.innerHTML = `Survey Data:
   <p> Yes: ${yes} </p>
   <p> No: ${no} </p>
   <p> Maybe: ${maybe} <p/>`;
@@ -50,24 +50,33 @@ function traverseSurveyData() {
 }
 
 function traverseAgeData() {
-  let under18 = 0;
-  let teen = 0;
-  let old = 0;
-  let senior = 0;
+  let var1 = [];
+  let var2 = [];
+  let var3 = [];
+  let var4 = [];
   for (let i = 0; i < ageData.length; i++) {
-    if (ageData[i] <= 18 === "under18") {
-      under18++;
+    if (ageData[i] < 18) {
+      var1.push(ageData[i]);
+    } else if (18 <= ageData[i] <= 35) {
+      var2.push(ageData[i]);
+    } else if (36 <= ageData[i] <= 65) {
+      var3.push(ageData[i]);
+    } else {
+      var4.push(ageData[i]);
     }
   }
+
   // Traverse the ageData array to:
-  // Count the number of ages under 18,
-  // Count the number of ages between 18 and 35, inclusive
   // Count the number of ages between 36 and 65, inclusive
   // Count the number of ages above 65,
   // and output the results in the outputEl.
 
   outputEl.innerHTML = `Age Data
-  <p> Under 18: ${under18}`;
+  <p> Under 18: ${var1}</p>
+  <p> 18 - 35: ${var2}</p>
+  <p> 36 - 65: ${var3}</p>
+  <p> Above 65: ${var4}</p>`;
+
   console.log(ageData);
 }
 
