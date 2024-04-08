@@ -45,7 +45,7 @@ function traverseSurveyData() {
   outputEl.innerHTML = `Survey Data:
   <p> Yes: ${yes} </p>
   <p> No: ${no} </p>
-  <p> Maybe: ${maybe} <p/>`;
+  <p> Maybe: ${maybe} </p>`;
   console.log(surveyData);
 }
 
@@ -57,35 +57,37 @@ function traverseAgeData() {
   for (let i = 0; i < ageData.length; i++) {
     if (ageData[i] < 18) {
       var1.push(ageData[i]);
-    } else if (18 <= ageData[i] <= 35) {
+    } else if (ageData[i] <= 35) {
       var2.push(ageData[i]);
-    } else if (36 <= ageData[i] <= 65) {
+    } else if (ageData[i] <= 65) {
       var3.push(ageData[i]);
     } else {
       var4.push(ageData[i]);
     }
   }
 
-  // Traverse the ageData array to:
-  // Count the number of ages between 36 and 65, inclusive
-  // Count the number of ages above 65,
-  // and output the results in the outputEl.
-
   outputEl.innerHTML = `Age Data
-  <p> Under 18: ${var1}</p>
-  <p> 18 - 35: ${var2}</p>
-  <p> 36 - 65: ${var3}</p>
-  <p> Above 65: ${var4}</p>`;
-
+  <p> Under 18: ${var1.length} </p>
+  <p> 18 - 35: ${var2.length} </p>
+  <p> 36 - 65: ${var3.length} </p>
+  <p> Above 65: ${var4.length} </p>`;
   console.log(ageData);
 }
 
 function traverseNumberData() {
-  // Traverse the numberData array to:
-  // Count the number of even numbers,
-  // Count the number of odd numbers,
-  // and output the results in the outputEl.
+  let odd = [];
+  let even = [];
 
-  outputEl.innerHTML = "Number Data";
+  for (let i = 0; i < numberData.length; i++) {
+    if (numberData[i] === "Odd") {
+      odd++;
+    } else {
+      even++;
+    }
+  }
+
+  outputEl.innerHTML = `Number Data:
+  <p> Odd: ${odd} </p>
+  <p> Even: ${even} </p>`;
   console.log(numberData);
 }
