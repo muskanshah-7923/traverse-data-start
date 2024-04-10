@@ -79,10 +79,10 @@ function traverseNumberData() {
   let even = [];
 
   for (let i = 0; i < numberData.length; i++) {
-    if (numberData[i] === "Odd") {
-      odd++;
-    } else {
+    if (numberData[i] % 2 === 0) {
       even++;
+    } else {
+      odd++;
     }
   }
 
