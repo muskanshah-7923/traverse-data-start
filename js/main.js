@@ -29,9 +29,9 @@ function btnClicked() {
 // Menu Option Functions
 
 function traverseSurveyData() {
-  let yes = [];
-  let no = [];
-  let maybe = [];
+  let yes = 0;
+  let no = 0;
+  let maybe = 0;
 
   for (let i = 0; i < surveyData.length; i++) {
     if (surveyData[i] === "Yes") {
@@ -75,8 +75,8 @@ function traverseAgeData() {
 }
 
 function traverseNumberData() {
-  let odd = [];
-  let even = [];
+  let odd = 0;
+  let even = 0;
 
   for (let i = 0; i < numberData.length; i++) {
     if (numberData[i] % 2 === 0) {
